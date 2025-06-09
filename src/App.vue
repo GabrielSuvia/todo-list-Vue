@@ -1,12 +1,27 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import ListTodo from './components/ListTodo.vue'
+
+
 </script>
 
 <template>
+
+<div class=list>
+
  <div>
-    <HelloWorld />
-  </div>
+    <ListTodo />
+ </div>
+
+
+
+<li>
+
+</li>
+
+</div>
 </template>
+
+
 
 <style scoped>
 
