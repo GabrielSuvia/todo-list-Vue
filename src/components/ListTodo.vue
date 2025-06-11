@@ -1,32 +1,34 @@
 <script setup>
 import { ref } from 'vue'
 
-const botonText = ref('')
+const nuevaTarea = ref('')
 const arrayText = ref([])
 
 function addTask() {
- const texto = nuevaTarea.value.trim()
- if (texto === '') return
+  const texto = nuevaTarea.value.trim()
+  if (texto === '') return
 
-  tareas.value.push(texto)
+  arrayText.value.push(texto)
   nuevaTarea.value = ''
 }
 </script>
 
 <template>
   <h1 class="card">Lista To-do</h1>
-   <input
-      v-model="nuevaTarea"
-      @keyup.enter="addTask"
-      placeholder="Escribe una tarea"
-    />
-    <button @click="cambiarTexto">add task</button>
-    <ul>
-      <li v-for="(tarea, index) in tareas" :key="index">
-      {{tarea}}
-      </li>
-    </ul>
 
+  <input
+    v-model="nuevaTarea"
+    @keyup.enter="addTask"
+    placeholder="Escribe una tarea"
+  />
+  
+  <button @click="addTask">Add Task</button>
+
+  <ul>
+    <li v-for="(tarea, index) in arrayText" :key="index">
+      {{ tarea }}
+    </li>
+  </ul>
 </template>
 
 <style scoped>
