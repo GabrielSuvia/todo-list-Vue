@@ -11,6 +11,11 @@ function addTask() {
   arrayText.value.push(texto)
   nuevaTarea.value = ''
 }
+
+function eliminar(index) {
+  arrayText.value.splice(index, 1)
+}
+
 </script>
 
 <template>
@@ -26,7 +31,8 @@ function addTask() {
 
   <ul>
     <li v-for="(tarea, index) in arrayText" :key="index">
-      {{ tarea }}
+      {{ tarea }}<button @click="eliminar(index)">delete</button>
+
     </li>
   </ul>
 </template>
